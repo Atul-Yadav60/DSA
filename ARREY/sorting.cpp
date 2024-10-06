@@ -62,29 +62,25 @@ int main(){
 3: Selection Sort Algorithm to sort the array of char in ascending order.
 */
  #include<iostream>
+ #include<algorithm>
  using namespace std;
  int main(){
     int size;
     cout<<"Enter the size of character arrey: ";
     cin >> size;
-    cout << "Enter the Characters";
     char arr[size];
+    cout << "Enter the Characters : ";
     for(int i=0;i<size;i++)
     cin >> arr[i];
 
-    for(int i=0;i<size-1;i++){
+    for(int i = 0 ; i < size-1 ; i++){
         int index=i;
-        for(int j=i+1;j<size;i++){
+        for(int j=i+1; j < size; j++){
             if(arr[j]<arr[index])
             index=j;
         }
         swap(arr[index],arr[i]);
     }
-      //char arr1[size];
-      //for(int i=0;i<size;i++){
-        //arr1[i]=arr[i];
-      //}
-
      cout << "Character arrey in Ascending order: ";
     for(int i=0;i<size;i++){
         cout <<  arr[i]<<" ";
