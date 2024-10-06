@@ -1,17 +1,28 @@
-#include<iostream>
-using namespace std;
-int main(){
-    int n;
-    cout << "enter the index of fibbo series:";
-    cin >> n;
+ #include<iostream>
+ #include<algorithm>
+ using namespace std;
+ int main(){
+    int size;
+    cout<<"Enter the size of character arrey: ";
+    cin >> size;
+    char arr[size];
+    cout << "Enter the Characters : ";
+    for(int i=0;i<size;i++)
+    cin >> arr[i];
 
-    int arr[10000];
-    arr[0]=0;
-    arr[1]=1;
-    for(int i=2;i<n;i++){
-        arr[i]=arr[i-1]+arr[i-2];
+    for(int i = 0 ; i < size-1 ; i++){
+        int index=i;
+        for(int j=i+1; j < size; j++){
+            if(arr[j]<arr[index])
+            index=j;
+        }
+        swap(arr[index],arr[i]);
     }
-    cout << arr[n];
-    return 0;
+     cout << "Character arrey in Ascending order: ";
+    for(int i=0;i<size;i++){
+        cout <<  arr[i]<<" ";
+    }
 
-}
+
+    return 0;
+ }
